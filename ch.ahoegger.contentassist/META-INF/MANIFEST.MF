@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Contentassist
+Bundle-SymbolicName: ch.ahoegger.contentassist;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: ch.ahoegger.contentassist.Activator
+Bundle-Vendor: ahoegger.ch
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.ui,
+ org.eclipse.jface.text;bundle-version="3.8.100"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

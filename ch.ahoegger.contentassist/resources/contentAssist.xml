@@ -1,0 +1,6 @@
+<contentAssist>
+	<item>
+		<name>Sample</name>
+		<code>System.out.println("Hello world");</code>
+	</item>
+</contentAssist>
