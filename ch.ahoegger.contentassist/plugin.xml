@@ -7,13 +7,21 @@
          point="org.eclipse.jdt.ui.javaCompletionProposalComputer">
       <javaCompletionProposalComputer
             activate="true"
-            categoryId="org.eclipse.jdt.ui.defaultProposalCategory"
+            categoryId="ch.ahoegger.contentassist.snippetProposalCategory"
             class="ch.ahoegger.contentassist.SnippetCompletionPropoaslComputer"
             needsSortingAfterFiltering="false">
          <partition
                type="__dftl_partition_content_type">
          </partition>
       </javaCompletionProposalComputer>
+   </extension>
+   <extension
+         id="ch.ahoegger.contentassist.snippetProposalCategory"
+         name="Scout Snippets"
+         point="org.eclipse.jdt.ui.javaCompletionProposalComputer">
+      <proposalCategory
+            icon="resources/icons/eclipse_scout.gif">
+      </proposalCategory>
    </extension>
 
 </plugin>

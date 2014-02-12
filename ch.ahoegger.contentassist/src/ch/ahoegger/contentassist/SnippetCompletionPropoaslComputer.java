@@ -1,5 +1,6 @@
 package ch.ahoegger.contentassist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -8,7 +9,7 @@ import org.eclipse.jdt.ui.text.java.IJavaCompletionProposalComputer;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 
-import ch.ahoegger.contentassist.internal.ProposalStore;
+import ch.ahoegger.contentassist.internal.DomProposalStore;
 
 public class SnippetCompletionPropoaslComputer implements IJavaCompletionProposalComputer {
 
@@ -30,7 +31,7 @@ public class SnippetCompletionPropoaslComputer implements IJavaCompletionProposa
 
   @Override
   public List<ICompletionProposal> computeCompletionProposals(ContentAssistInvocationContext context, IProgressMonitor monitor) {
-    return ProposalStore.loadProposals();
+    return new ArrayList<ICompletionProposal>(DomProposalStore.loadProposals());
   }
 
   @Override

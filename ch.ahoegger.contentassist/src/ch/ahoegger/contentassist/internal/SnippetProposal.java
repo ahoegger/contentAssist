@@ -34,7 +34,7 @@ import ch.ahoegger.contentassist.Activator;
  * @author aho
  * @since 3.10.0 11.02.2014
  */
-public class SnippetProposal implements IJavaCompletionProposal, ICompletionProposalExtension, ICompletionProposalExtension2, ICompletionProposalExtension3, ICompletionProposalExtension4 {
+public class SnippetProposal implements IJavaCompletionProposal, ICompletionProposalExtension, ICompletionProposalExtension2, ICompletionProposalExtension3, ICompletionProposalExtension4, Comparable<SnippetProposal> {
 
   private String m_name;
   private String m_value;
@@ -159,6 +159,14 @@ public class SnippetProposal implements IJavaCompletionProposal, ICompletionProp
   @Override
   public int getRelevance() {
     return 0;
+  }
+
+  @Override
+  public int compareTo(SnippetProposal o) {
+    if (o == null) {
+      return -1;
+    }
+    return getName().compareTo(o.getName());
   }
 
   protected Point findTriggerWordRange(IDocument document, int offset) throws BadLocationException {
